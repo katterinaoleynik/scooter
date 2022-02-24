@@ -14,10 +14,11 @@ public class MainPagePOM {
         open("https://qa-scooter.praktikum-services.ru/");
     }
 
-    //Нажатие на кнопку согласия использования куки
-    public void clickConfirmButton() {
-        $(byId("rcc-confirm-button")).click();
-    }
+    //Условие на проверку и нажатие на кнопку согласия использования куки
+    public void clickAcceptButton() {
+        if($(byClassName("App_CookieButton__3cvqF")).exists())
+            $(byClassName("App_CookieButton__3cvqF")).click();
+        }
 
     //Ожидание кнопки "Заказать" в хедере
     public void waitOrderInHeader() {
