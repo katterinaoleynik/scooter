@@ -1,12 +1,7 @@
 package io.github.katterinaoleynik.scooter;
-import com.codeborne.selenide.WebDriverRunner;
 import org.junit.Before;
 import org.junit.Test;
-import static com.codeborne.selenide.Condition.exactText;
-import static com.codeborne.selenide.Condition.or;
-import static com.codeborne.selenide.Selectors.*;
-import static com.codeborne.selenide.Selenide.$;
-import static org.junit.Assert.assertEquals;
+
 
 public class OrderTest {
 
@@ -54,7 +49,6 @@ public class OrderTest {
         orderPOM.confirmation();
         //нажать кнопку "Посмотреть заказ"
         orderPOM.clickSeeStatus();
-
     }
 
     //Оформление заказа. Позитивный сценарий с заполнением всех полей 2
@@ -92,9 +86,6 @@ public class OrderTest {
         orderPOM.confirmation();
         //нажать кнопку "Посмотреть заказ"
         orderPOM.clickSeeStatus();
-
-
     }
-
 
 }

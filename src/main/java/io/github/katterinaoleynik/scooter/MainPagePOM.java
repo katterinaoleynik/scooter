@@ -105,12 +105,10 @@ public class MainPagePOM {
         return $(byXpath("//*[@id=\"root\"]/div/div/div[5]/div[1]")).getText();
     }
 
-
     //Получаем текст страницы с описанием модели
     public String getTextModelDescription() {
         return $(byClassName("Home_Table__2kPxP")).getText();
     }
-
 
     //Получаем текст шагов из блока "Как это работает"
     public String getTextFromSteps() {
@@ -217,4 +215,5 @@ public class MainPagePOM {
     public void clickAccordion8() {
         $(byId("accordion__heading-7")).click();
     }
+
 }

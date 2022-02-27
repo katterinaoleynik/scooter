@@ -1,25 +1,16 @@
 package io.github.katterinaoleynik.scooter;
 
-import com.codeborne.selenide.WebDriverRunner;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import static com.codeborne.selenide.Condition.exactText;
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
-import static org.junit.Assert.assertEquals;
+
 
 
 public class MainPageTest {
 
     private final MainPagePOM mainPage = new MainPagePOM();
-
-    public class YandexTest {
-        ChromeDriver driver;
-    }
-
 
     @Before
     public void setup() {
@@ -27,8 +18,8 @@ public class MainPageTest {
         mainPage.clickAcceptButton();
     }
 
-
     // Проверка соответствия текста при нажатии на стрелочки в блоке "Вопросы о важном"
+
     //Ответ на первый вопрос
     @Test
     public void checkTextQuestions1() { ;

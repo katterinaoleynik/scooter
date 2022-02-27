@@ -1,7 +1,5 @@
 package io.github.katterinaoleynik.scooter;
 
-import com.codeborne.selenide.SelenideElement;
-import static com.codeborne.selenide.Condition.cssClass;
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
@@ -128,8 +126,6 @@ public class OrderPOM {
     public void clickOrderCancellation() {
         $(byXpath("/html/body/div/div/div[2]/div[5]/div[2]/button[1]")).click();
     }
-
-
 
     //Видимость окна оформленного заказа
     public void confirmation() {
