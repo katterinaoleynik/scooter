@@ -1,4 +1,5 @@
 package io.github.katterinaoleynik.scooter;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -46,7 +47,7 @@ public class OrderTest {
         //выбрать вариант "да" в модальном окне подтверждения заказа
         orderPOM.clickConfirmation();
         //убедиться в появлении окна "Заказ оформлен"
-        orderPOM.confirmation();
+        orderPOM.checkConfirmation();
         //нажать кнопку "Посмотреть заказ"
         orderPOM.clickSeeStatus();
     }
@@ -83,7 +84,7 @@ public class OrderTest {
         //выбрать вариант "да" в модальном окне подтверждения заказа
         orderPOM.clickConfirmation();
         //убедиться в появлении окна "Заказ оформлен"
-        orderPOM.confirmation();
+        orderPOM.checkConfirmation();
         //нажать кнопку "Посмотреть заказ"
         orderPOM.clickSeeStatus();
     }

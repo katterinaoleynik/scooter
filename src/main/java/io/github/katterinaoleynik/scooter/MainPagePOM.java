@@ -1,5 +1,7 @@
 package io.github.katterinaoleynik.scooter;
 
+import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -16,9 +18,9 @@ public class MainPagePOM {
 
     //Условие на проверку и нажатие на кнопку согласия использования куки
     public void clickAcceptButton() {
-        if($(byClassName("App_CookieButton__3cvqF")).exists())
+        if ($(byClassName("App_CookieButton__3cvqF")).exists())
             $(byClassName("App_CookieButton__3cvqF")).click();
-        }
+    }
 
     //Ожидание кнопки "Заказать" в хедере
     public void waitOrderInHeader() {
@@ -57,17 +59,17 @@ public class MainPagePOM {
 
     //Ожидание кнопки "Заказать"
     public void waitOrder() {
-        $(byXpath("/html/body/div/div/div/div[4]/div[2]/div[5]/button")).shouldBe(visible);
+        $(byClassName("Button_Button__ra12g Button_Middle__1CSJM")).shouldBe(visible);
     }
 
     //Кликаем на кнопку "Заказать"
     public void clickOrder() {
-        $(byXpath("/html/body/div/div/div/div[4]/div[2]/div[5]/button")).click();
+        $(byClassName("Button_Button__ra12g Button_Middle__1CSJM")).click();
     }
 
     //Кликаем на лого "Самокат" в хедере
     public void clickLogoScooterInHeader() {
-        $(byXpath("//*[@id=\"root\"]/div/div/div[1]/div[1]/a[2]/img")).click();
+        $(byClassName("Header_LogoScooter__3lsAR")).click();
     }
 
     //Кликаем на лого "Яндекс" в хедере
@@ -85,26 +87,6 @@ public class MainPagePOM {
         return $(byClassName("Home_Header__iJKdX")).getText();
     }
 
-    //Получаем текст первого подзаголовка страницы
-    public String getTextHomeSubHeader1() {
-        return $(byXpath("//*[@id=\"root\"]/div/div/div[2]/div[4]/div[1]")).getText();
-    }
-
-    //Получаем текст второго подзаголовка страницы
-    public String getTextHomeSubHeader2() {
-        return $(byXpath("//*[@id=\"root\"]/div/div/div[2]/div[4]/div[2]")).getText();
-    }
-
-    //Получаем текст третьего подзаголовка страницы
-    public String getTextHomeSubHeader3() {
-        return $(byXpath("//*[@id=\"root\"]/div/div/div[4]/div[1]")).getText();
-    }
-
-    //Получаем текст четвертого подзаголовка страницы
-    public String getTextHomeSubHeader4() {
-        return $(byXpath("//*[@id=\"root\"]/div/div/div[5]/div[1]")).getText();
-    }
-
     //Получаем текст страницы с описанием модели
     public String getTextModelDescription() {
         return $(byClassName("Home_Table__2kPxP")).getText();
@@ -115,26 +97,7 @@ public class MainPagePOM {
         return $(byClassName("Home_Status__YkfmH")).getText();
     }
 
-    //Получаем текст первого шага из блока "Как это работает"
-    public String getTextStep1() {
-        return $(byXpath("//*[@id=\"root\"]/div/div/div[4]/div[2]/div[1]/div[2]")).getText();
-    }
-
-    //Получаем текст второго шага из блока "Как это работает"
-    public String getTextStep2() {
-        return $(byXpath("//*[@id=\"root\"]/div/div/div[4]/div[2]/div[2]/div[2]")).getText();
-    }
-
-    //Получаем текст третьего шага из блока "Как это работает"
-    public String getTextStep3() {
-        return $(byXpath("//*[@id=\"root\"]/div/div/div[4]/div[2]/div[3]/div[2]")).getText();
-    }
-
-    //Получаем текст четвертого шага из блока "Как это работает"
-    public String getTextStep4() {
-        return $(byXpath("//*[@id=\"root\"]/div/div/div[4]/div[2]/div[4]/div[2]")).getText();
-    }
-
+    //Блок "Вопросы о важном"
     // ожидание загрузки 1-го вопроса о важном
     public void waitForLoadAccordion1() {
         $(byId("accordion__heading-0")).shouldBe(visible);
@@ -181,9 +144,19 @@ public class MainPagePOM {
         $(byId("accordion__heading-0")).click();
     }
 
+    //Получаем ответ на 1-й вопрос
+    public SelenideElement getAnswerStep1() {
+        return $(byId("accordion__panel-0"));
+    }
+
     //Вопрос 2
     public void clickAccordion2() {
         $(byId("accordion__heading-1")).click();
+    }
+
+    //Получаем ответ на 2-й вопрос
+    public SelenideElement getAnswerStep2() {
+        return $(byId("accordion__panel-1"));
     }
 
     //Вопрос 3
@@ -191,9 +164,19 @@ public class MainPagePOM {
         $(byId("accordion__heading-2")).click();
     }
 
+    //Получаем ответ на 3-й вопрос
+    public SelenideElement getAnswerStep3() {
+        return $(byId("accordion__panel-2"));
+    }
+
     //Вопрос 4
     public void clickAccordion4() {
         $(byId("accordion__heading-3")).click();
+    }
+
+    //Получаем ответ на 4-й вопрос
+    public SelenideElement getAnswerStep4() {
+        return $(byId("accordion__panel-3"));
     }
 
     //Вопрос 5
@@ -201,9 +184,19 @@ public class MainPagePOM {
         $(byId("accordion__heading-4")).click();
     }
 
+    //Получаем ответ на 5-й вопрос
+    public SelenideElement getAnswerStep5() {
+        return $(byId("accordion__panel-4"));
+    }
+
     //Вопрос 6
     public void clickAccordion6() {
         $(byId("accordion__heading-5")).click();
+    }
+
+    //Получаем ответ на 6-й вопрос
+    public SelenideElement getAnswerStep6() {
+        return $(byId("accordion__panel-5"));
     }
 
     //Вопрос 7
@@ -211,9 +204,19 @@ public class MainPagePOM {
         $(byId("accordion__heading-6")).click();
     }
 
+    //Получаем ответ на 7-й вопрос
+    public SelenideElement getAnswerStep7() {
+        return $(byId("accordion__panel-6"));
+    }
+
     //Вопрос 8
     public void clickAccordion8() {
         $(byId("accordion__heading-7")).click();
+    }
+
+    //Получаем ответ на 8-й вопрос
+    public SelenideElement getAnswerStep8() {
+        return $(byId("accordion__panel-7"));
     }
 
 }
